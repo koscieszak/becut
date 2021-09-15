@@ -20,7 +20,7 @@ public class TestCaseDeserializationIT extends TestCase {
 	
 	@Test
 	public void testDeserializeMAT510RS() {
-		File file = new File("./src/test/resources/testcases/mat510rs_testcase.json");
+		File file = new File("./src/test/resources/testsuites/mat510/becut-MAT510/test_case.json");
 		FileInputStream fileInputStream;
 		try {
 			fileInputStream = new FileInputStream(file);

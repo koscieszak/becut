@@ -24,9 +24,8 @@ import koopa.core.trees.Tree;
 
 public class ParseTest {
 	@Test
-	public void testCreateCompileListMAT510RS() throws Exception {
-		//File file = new File("./src/test/resources/compilelistings/mat510rs_compile_listing.txt");
-		File file = new File("C:/temp/sql-suite/compile_listing.txt");
+	public void testCreateCompileListMAT510RS() throws FileNotFoundException {
+		File file = new File("./src/test/resources/compilelistings/mat510rs_compile_listing.txt");
 		CompileListing compileListing = Parse.parse(file);
 		assertNotNullCompileListing(compileListing);
 	}
@@ -41,12 +40,9 @@ public class ParseTest {
 	@Test
 	public void testCreateCompileListSyntaxCheck() throws FileNotFoundException {
 		File file = new File("./src/test/resources/compilelistings/mat514rs_syntaxcheck_listing.txt");
-		try {
-			CompileListing compileListing = Parse.parse(file);
-			assertNotNullCompileListing(compileListing);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
+		CompileListing compileListing = Parse.parse(file);
+		assertNotNullCompileListing(compileListing);
+
 	}
 
 	@Test
@@ -77,7 +73,7 @@ public class ParseTest {
 	}
 
 	@Test
-	public void testShouldRegisterFileControlNames() throws Exception {
+	public void testShouldRegisterFileControlNames() throws FileNotFoundException {
 		File file = new File("src/test/resources/compilelistings/JOB06352.5");
 		CompileListing compileListing = Parse.parse(file);
 		Map<String, String> assignements = compileListing.getSourceMapAndCrossReference().getFileControlAssignment();
@@ -87,7 +83,7 @@ public class ParseTest {
 	}
 
 	@Test
-	public void testShouldRegisterFileControlNamesWithNumbers() throws Exception {
+	public void testShouldRegisterFileControlNamesWithNumbers() throws FileNotFoundException {
 		File file = new File("src/test/resources/compilelistings/JOB26282.5");
 		CompileListing compileListing = Parse.parse(file);
 		Map<String, String> assignements = compileListing.getSourceMapAndCrossReference().getFileControlAssignment();
