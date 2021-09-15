@@ -17,7 +17,7 @@ import dk.bec.unittest.becut.testcase.model.Parameter;
 import junit.framework.TestCase;
 import koopa.core.trees.Tree;
 
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
 public class GenerateTestScriptIT extends TestCase {
